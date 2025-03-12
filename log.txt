@@ -1,0 +1,169 @@
+GrassApp Development Log
+=====================
+
+Project Setup and Configuration
+-----------------------------
+1. Created Next.js project with TypeScript and Tailwind CSS support
+2. Set up project structure in the grassapp-web directory
+
+Tailwind CSS Configuration
+-------------------------
+1. Initial configuration issues:
+   - Encountered problems with unknown utility classes
+   - Tailwind CSS wasn't properly recognizing custom classes
+
+2. Configuration Updates:
+   a. Updated tailwind.config.ts:
+      - Added content paths for component scanning
+      - Configured custom color system using CSS variables
+      - Added safelist for dynamic class generation
+      - Configured custom border radius and box shadows
+      - Final working configuration:
+        ```
+        colors: {
+          grass: {
+            primary: 'var(--grass-primary)',
+            'primary-light': 'var(--grass-primary-light)',
+            accent: 'var(--grass-accent)',
+            bg: 'var(--grass-bg)',
+            'bg-light': 'var(--grass-bg-light)',
+          }
+        }
+        ```
+
+3. Global Styles Setup:
+   a. Created CSS variables in globals.css:
+      - Defined color scheme
+      - Set up custom color variables
+      - Configured base styles
+      - Added custom scrollbar styling
+      - Implemented component classes
+
+4. Component Styling:
+   - Created custom button styles
+   - Implemented card component styles
+   - Added hover effects and transitions
+   - Used CSS variables for consistent theming
+
+Color Scheme
+-----------
+Primary Colors:
+- Primary: #1B5E20 (Dark Green)
+- Primary Light: #2E7D32 (Medium Green)
+- Accent: #00FF00 (Bright Green)
+
+Background Colors:
+- Background: #000000 (Black)
+- Background Light: #121212 (Dark Gray)
+
+Special Effects
+-------------
+1. Box Shadows:
+   - Soft shadow: 0 4px 6px -1px rgba(0, 255, 0, 0.1)
+   - Glow effect: 0 0 15px rgba(0, 255, 0, 0.3)
+
+2. Transitions:
+   - All transitions set to 300ms
+   - Smooth hover effects on buttons and cards
+
+Resolved Issues
+-------------
+1. PostCSS Configuration:
+   - Fixed issues with PostCSS plugin compatibility
+   - Updated PostCSS config to use proper plugin format
+
+2. Tailwind Class Recognition:
+   - Resolved unknown utility class errors
+   - Implemented proper CSS variable integration
+   - Fixed @apply directive issues
+
+3. TypeScript Configuration:
+   - Note: TypeScript linter warning for tailwindcss types remains
+   - Functionality not affected by this warning
+
+Current Status
+-------------
+- Development server running successfully
+- Styles properly applying
+- Custom color scheme implemented
+- Component styles working as expected
+- All major configuration issues resolved
+
+API Integration Setup
+-------------------
+1. Configured Next.js API Integration:
+   - Created next.config.js with API routing
+   - Set up proxy to local FastAPI server (http://localhost:8000)
+   - Added API request rewriting for clean URLs
+
+2. Created API Utility Layer (src/utils/api.ts):
+   - Implemented TypeScript interfaces matching FastAPI models
+   - Set up axios instance with base configuration
+   - Created functions for all major API endpoints:
+     * Dispensary data fetching
+     * Product listing with filters
+     * Cart management (CRUD operations)
+
+3. Available API Endpoints:
+   - GET /dispensary/{url} - Fetch dispensary data
+   - GET /dispensary/{url}/products - Get filtered products
+   - GET /cart/{userId}/{url} - Get user's cart
+   - POST /cart/{userId}/{url}/items - Add to cart
+   - PUT /cart/{userId}/{url}/items/{itemId} - Update cart item
+   - DELETE /cart/{userId}/{url}/items/{itemId} - Remove from cart
+   - DELETE /cart/{userId}/{url} - Clear cart
+
+Redux Implementation
+------------------
+1. Set up Redux Store:
+   - Created store configuration with TypeScript support
+   - Implemented cart slice with full type safety
+   - Added typed hooks for Redux usage
+
+2. Cart State Management:
+   - Implemented cart actions:
+     * setDispensary - Manages active dispensary
+     * addItem - Adds items with quantity management
+     * updateItemQuantity - Updates existing item quantities
+     * removeItem - Removes items from cart
+     * clearCart - Clears entire cart
+   - Added loading and error states
+   - Implemented automatic cart clearing when switching dispensaries
+
+3. Application Setup:
+   - Created providers component for Redux integration
+   - Updated root layout to wrap app with Redux Provider
+   - Set up TypeScript types for store and dispatch
+
+Next Steps
+---------
+1. Create cart UI components
+2. Implement dispensary product listing
+3. Add cart interaction functionality
+4. Set up checkout flow
+5. Implement payment system integration
+
+Next Steps (Based on Development Guide)
+------------------------------------
+1. Install Required Dependencies:
+   - axios (for API calls)
+   - @reduxjs/toolkit and react-redux (for state management)
+   - react-icons (for UI icons)
+   - react-query (for data fetching)
+   - next-auth (for authentication)
+
+2. Set Up Proxy Server API Integration:
+   - Create API configuration
+   - Implement dispensary data fetching
+   - Set up API routes in next.config.js
+
+3. Implement Cart & Checkout System:
+   - Set up Redux store
+   - Create cart slice
+   - Build cart management components
+
+4. Future Tasks:
+   - Implement payment system integration
+   - Add Stripe for card payments
+   - Set up ACH and crypto payment options
+   - Prepare for deployment 
