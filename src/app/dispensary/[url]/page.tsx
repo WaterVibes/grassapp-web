@@ -85,7 +85,7 @@ export default function DispensaryMenu() {
           {/* Dispensary Info */}
           <div className="relative h-32 w-32 mx-auto mb-4 rounded-full overflow-hidden">
             <Image
-              src="/images/dispensary-placeholder.jpg"
+              src="/images/dispensaries/placeholder.jpg"
               alt="Dispensary"
               fill
               className="object-cover"
@@ -144,7 +144,7 @@ export default function DispensaryMenu() {
               <div key={product.id} className="bg-grass-bg-light rounded-xl overflow-hidden">
                 <div className="relative h-64">
                   <Image
-                    src="/images/product-placeholder.jpg"
+                    src="/images/products/placeholder.jpg"
                     alt={product.name}
                     fill
                     className="object-cover"

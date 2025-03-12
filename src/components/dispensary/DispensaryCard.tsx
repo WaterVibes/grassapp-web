@@ -20,7 +20,7 @@ export function DispensaryCard({ dispensary }: DispensaryCardProps) {
       <div className="bg-white bg-opacity-5 rounded-xl overflow-hidden hover:bg-opacity-10 transition-colors">
         <div className="relative h-48">
           <Image
-            src={dispensary.logo_url || "/images/dispensary-placeholder.jpg"}
+            src={dispensary.logo_url || "/images/dispensaries/placeholder.jpg"}
             alt={dispensary.name}
             fill
             className="object-cover"

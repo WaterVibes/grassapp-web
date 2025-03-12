@@ -124,19 +124,19 @@ export default function ProductConfirmModal({ isOpen, onClose, product }: Produc
                       </div>
 
                       <div className="grid grid-cols-2 gap-3">
-                        {product.metadata.sizes.map((size) => (
+                        {product.metadata?.sizes?.map((size) => (
                           <button
                             key={size.name}
                             onClick={() => setSelectedSize(size)}
-                            className={`p-3 rounded-xl border ${
+                            className={`p-3 rounded-lg border ${
                               selectedSize?.name === size.name
-                                ? 'bg-grass-primary text-white border-grass-primary'
-                                : 'border-grass-primary/20 hover:border-grass-primary/40'
-                            } transition-colors`}
+                                ? 'border-grass-primary bg-grass-primary/10'
+                                : 'border-white/10 hover:border-grass-primary/50'
+                            }`}
                           >
-                            <div className="font-medium">{size.name}</div>
-                            <div className="text-sm text-gray-400">{size.weight}</div>
-                            <div className="mt-1">${size.price.toFixed(2)}</div>
+                            <div className="text-sm font-medium">{size.name}</div>
+                            <div className="text-xs text-gray-400">{size.weight}</div>
+                            <div className="mt-1">${size.price}</div>
                           </button>
                         ))}
                       </div>

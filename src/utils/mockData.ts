@@ -7,7 +7,7 @@ export const mockDispensaries: Dispensary[] = [
     name: 'Green Leaf Dispensary',
     is_open: true,
     description: 'Your premier cannabis destination in Baltimore',
-    logo_url: '/images/dispensary-placeholder.jpg',
+    logo_url: '/images/dispensaries/placeholder.jpg',
     location: {
       address: '1234 Cannabis Street',
       city: 'Baltimore',
@@ -27,7 +27,7 @@ export const mockDispensaries: Dispensary[] = [
     name: 'Purple Haze Collective',
     is_open: true,
     description: 'Premium quality cannabis products',
-    logo_url: '/images/dispensary-placeholder.jpg',
+    logo_url: '/images/dispensaries/placeholder.jpg',
     location: {
       address: '5678 Herb Avenue',
       city: 'Baltimore',
